@@ -508,7 +508,87 @@
 }
 /*** footer End ***/
 
+/* OJT Demo Reel Modal Styles */
 
+/* Modal backdrop */
+.ojt-modal-portrait {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: opacity 0.25s ease;
+}
 
+/* Modal visible state */
+.ojt-modal-portrait.show {
+  display: flex;
+  opacity: 1;
+}
 
+/* Content area */
+.ojt-modal-portrait-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 420px;
+  width: 100%;
+  animation: slideUpModal 0.28s ease;
+}
 
+/* Close button */
+.ojt-close-portrait {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.ojt-close-portrait:hover {
+  transform: scale(1.1);
+}
+
+/* Phone-like frame */
+.ojt-phone-frame {
+  width: 360px;
+  height: 640px;
+  max-width: calc(100vw - 60px);
+  max-height: calc(100vh - 120px);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Make iframe fit perfectly */
+.ojt-phone-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Animation */
+@keyframes slideUpModal {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
